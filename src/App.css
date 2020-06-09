@@ -1,38 +1,179 @@
+@import url("https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,500,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500&display=swap");
+:root {
+  --sidebar-flex: 1.5;
+  --condiv-flex: 6;
+  --fontsize-p: 1.2rem;
+  --fontsize-nav: 1.6rem;
+  --typing-font: 3rem;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Crimson Pro", serif;
+  font-size: 20px;
+  color: #ccc;
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
+  width: 100vw;
+  min-height: 100vh;
+  background-image: url(./img/diamond.jpg);
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 500px; /* You must set a specified height */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+/* .condiv class is for the right side content container*/
+.condiv {
+  padding: 100px;
+  /* background-color: #f4f5f9; */
+  flex: var(--condiv-flex);
+}
+.home {
+  display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
+
+}
+.profilepic {
+  /* border-radius: 50%; */
+  width: 170px;
+  margin: 20px auto 50px auto;
+  display: block;
+  margin: -25px;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  
+}
+nav {
+  padding: 0px 10px 0px 0px;
+  flex: var(--sidebar-flex);
+  /* background: rgb(108, 152, 165);
+  background: linear-gradient( 180deg, rgb(24, 24, 24) 50%, rgb(52, 52, 52) 80% ); */
 }
 
-.App-link {
-  color: #61dafb;
+nav ul {
+  font-size: var(--fontsize-nav);
+  text-align: center;
+  list-style-type: none;
+  text-decoration: none;
+  color: white !important;
+}
+nav ul li {
+  margin: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.active {
+  font-weight: bolder;
+}
+.social {
+  position: inherit;
+  margin-top: 100px;
+  display: flex;
+  bottom: 60px;
+}
+.social i {
+  padding-right: 30px;
+  font-size: 25px;
+  color: #9a9b9c;
+}
+.social i:hover {
+  color: #ffffff;
+}
+
+.icons {
+  color: #ccc;
+  margin: 10px;
+}
+
+.subtopic {
+  margin: 10px 10px 30px 10px !important;
+}
+p {
+  font-size: var(--fontsize-p);
+}
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 10px;
+}
+.widecard {
+  border: 0px solid #9a9b9c;
+  display: flex;
+  margin: 30px 0px 30px 0px;
+}
+.widecard:hover {
+  color: #fdf3f3;
+  /* background-color: #363434; */
+  background: linear-gradient( 45deg, rgb(36, 36, 36) 50%, rgb(52, 52, 52) 80% );
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+a,
+a:link,
+a:visited,
+a:focus,
+a:hover,
+a:active {
+  color: #ccc;
+  text-decoration: none;
+  cursor: crosshair;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media (max-width: 700px) {
+  .App {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+.backpic {
+  max-width: 100%;
+  height: 100vh;
+  /* margin: -25px;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg); */
+  /* filter: blur(3px);
+  -webkit-filter: blur(3px); */
+}
+#typing {
+  position: absolute;
+  font-size: 50px;
+  top: 50px;
+  left: 50px;
+}
+
+.typinghome {
+  position: absolute;
+  color: #ccc;
+}
+
+#socialhome {
+  bottom: -500px;
+  left: 0px;
+  position: absolute;
+  font-size: smaller;
+}
+
+
+#diamond {
+  width: 120px;
+  height: 120px;
+  margin: 50px;
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  overflow: hidden;
+  border: 8px solid #6d6a6a;
 }
